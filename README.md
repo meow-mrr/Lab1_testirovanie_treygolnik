@@ -1,2 +1,5 @@
 # Lab1_testirovanie_treygolnik
-treygolnichki
+---
+Работа сделана на QT
+
+Основной код в mainwindow.cpp
