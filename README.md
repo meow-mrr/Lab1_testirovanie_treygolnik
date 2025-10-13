@@ -1,0 +1,2 @@
+# Lab1_testirovanie_treygolnik
+treygolnichki
