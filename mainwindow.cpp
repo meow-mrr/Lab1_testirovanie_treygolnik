@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "triangledialog.h"
 #include "./ui_mainwindow.h"
 #include <QRegularExpression>
 
@@ -93,9 +94,12 @@ void MainWindow::on_act_btn_clicked()
     int secondnum2 = secondnum.toInt();
     int thirdnum2 = thirdnum.toInt();
 
+    int ercount = 0;
+
     if(firstnum2+secondnum2<thirdnum2 or firstnum2+thirdnum2<secondnum2 or secondnum2+thirdnum2<firstnum2)
     {
         ui->answerlabel->setText("Такого треугольника не существует!!");
+        ercount++;
     }
     else if(firstnum2 == secondnum2 and firstnum2 == thirdnum2 and secondnum2 == thirdnum2)
     {
@@ -110,8 +114,11 @@ void MainWindow::on_act_btn_clicked()
         ui->answerlabel->setText("Произвольный трегольник!!");
     }
 
-
-
+    if(ercount==0){
+        TriangleDialog *dlg = new TriangleDialog(firstnum2, secondnum2, thirdnum2, this);
+        dlg->setAttribute(Qt::WA_DeleteOnClose); // чтобы удалять при закрытии
+        dlg->show();
+    }
 }
 
 
