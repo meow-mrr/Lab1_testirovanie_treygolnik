@@ -116,7 +116,7 @@ void MainWindow::on_act_btn_clicked()
 
     if(ercount==0){
         TriangleDialog *dlg = new TriangleDialog(firstnum2, secondnum2, thirdnum2, this);
-        dlg->setAttribute(Qt::WA_DeleteOnClose); // чтобы удалять при закрытии
+        dlg->setAttribute(Qt::WA_DeleteOnClose);
         dlg->show();
     }
 }
@@ -142,4 +142,5 @@ void MainWindow::on_txt_tn_textChanged(const QString &arg1)
     ui->errorlabelthird->setText("");
     ui->txt_tn->setStyleSheet("QLabel { color : white; }");
 }
+
 
